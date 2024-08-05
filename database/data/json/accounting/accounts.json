@@ -1,0 +1,272 @@
+[
+    {
+        "type_id": "1",
+        "code": "120",
+        "name": "Accounts Receivable"
+    },
+    {
+        "type_id": "3",
+        "code": "140",
+        "name": "Inventory"
+    },
+    {
+        "type_id": "2",
+        "code": "150",
+        "name": "Office Equipment"
+    },
+    {
+        "type_id": "2",
+        "code": "160",
+        "name": "Computer Equipment"
+    },
+    {
+        "type_id": "10",
+        "code": "170",
+        "name": "Accumulated Depreciation"
+    },
+    {
+        "type_id": "7",
+        "code": "200",
+        "name": "Accounts Payable"
+    },
+    {
+        "type_id": "7",
+        "code": "205",
+        "name": "Accruals"
+    },
+    {
+        "type_id": "7",
+        "code": "210",
+        "name": "Unpaid Expense Claims"
+    },
+    {
+        "type_id": "7",
+        "code": "215",
+        "name": "Wages Payable"
+    },
+    {
+        "type_id": "7",
+        "code": "216",
+        "name": "Wages Payable - Payroll"
+    },
+    {
+        "type_id": "7",
+        "code": "235",
+        "name": "Employee Benefits Payable"
+    },
+    {
+        "type_id": "7",
+        "code": "236",
+        "name": "Employee Deductions payable"
+    },
+    {
+        "type_id": "7",
+        "code": "250",
+        "name": "Suspense"
+    },
+    {
+        "type_id": "7",
+        "code": "255",
+        "name": "Historical Adjustments"
+    },
+    {
+        "type_id": "7",
+        "code": "260",
+        "name": "Rounding"
+    },
+    {
+        "type_id": "7",
+        "code": "835",
+        "name": "Revenue Received in Advance"
+    },
+    {
+        "type_id": "7",
+        "code": "855",
+        "name": "Clearing Account"
+    },
+    {
+        "type_id": "9",
+        "code": "290",
+        "name": "Loan"
+    },
+    {
+        "type_id": "11",
+        "code": "500",
+        "name": "Costs of Goods Sold"
+    },
+    {
+        "type_id": "12",
+        "code": "600",
+        "name": "Advertising"
+    },
+    {
+        "type_id": "12",
+        "code": "605",
+        "name": "Bank Service Charges"
+    },
+    {
+        "type_id": "12",
+        "code": "610",
+        "name": "Janitorial Expenses"
+    },
+    {
+        "type_id": "12",
+        "code": "615",
+        "name": "Consulting & Accounting"
+    },
+    {
+        "type_id": "12",
+        "code": "620",
+        "name": "Entertainment"
+    },
+    {
+        "type_id": "12",
+        "code": "624",
+        "name": "Postage & Delivery"
+    },
+    {
+        "type_id": "12",
+        "code": "628",
+        "name": "General Expenses"
+    },
+    {
+        "type_id": "12",
+        "code": "632",
+        "name": "Insurance"
+    },
+    {
+        "type_id": "12",
+        "code": "636",
+        "name": "Legal Expenses"
+    },
+    {
+        "type_id": "12",
+        "code": "640",
+        "name": "Utilities"
+    },
+    {
+        "type_id": "12",
+        "code": "644",
+        "name": "Automobile Expenses"
+    },
+    {
+        "type_id": "12",
+        "code": "648",
+        "name": "Office Expenses"
+    },
+    {
+        "type_id": "12",
+        "code": "652",
+        "name": "Printing & Stationary"
+    },
+    {
+        "type_id": "12",
+        "code": "656",
+        "name": "Rent"
+    },
+    {
+        "type_id": "12",
+        "code": "660",
+        "name": "Repairs & Maintenance"
+    },
+    {
+        "type_id": "12",
+        "code": "664",
+        "name": "Wages & Salaries"
+    },
+    {
+        "type_id": "12",
+        "code": "672",
+        "name": "Dues & Subscriptions"
+    },
+    {
+        "type_id": "12",
+        "code": "676",
+        "name": "Telephone & Internet"
+    },
+    {
+        "type_id": "12",
+        "code": "680",
+        "name": "Travel"
+    },
+    {
+        "type_id": "12",
+        "code": "684",
+        "name": "Bad Debts"
+    },
+    {
+        "type_id": "12",
+        "code": "700",
+        "name": "Depreciation"
+    },
+    {
+        "type_id": "12",
+        "code": "715",
+        "name": "Employee Benefits Expense"
+    },
+    {
+        "type_id": "12",
+        "code": "800",
+        "name": "Interest Expense"
+    },
+    {
+        "type_id": "12",
+        "code": "810",
+        "name": "Bank Revaluations"
+    },
+    {
+        "type_id": "12",
+        "code": "815",
+        "name": "Unrealized Currency Gains"
+    },
+    {
+        "type_id": "12",
+        "code": "820",
+        "name": "Realized Currency Gains"
+    },
+    {
+        "type_id": "12",
+        "code": "825",
+        "name": "Sales Discount"
+    },
+    {
+        "type_id": "13",
+        "code": "400",
+        "name": "Sales"
+    },
+    {
+        "type_id": "13",
+        "code": "460",
+        "name": "Interest Income"
+    },
+    {
+        "type_id": "13",
+        "code": "470",
+        "name": "Other Revenue"
+    },
+    {
+        "type_id": "13",
+        "code": "475",
+        "name": "Purchase Discount"
+    },
+    {
+        "type_id": "16",
+        "code": "300",
+        "name": "Owners Contribution"
+    },
+    {
+        "type_id": "16",
+        "code": "310",
+        "name": "Owners Draw"
+    },
+    {
+        "type_id": "16",
+        "code": "320",
+        "name": "Retained Earnings"
+    },
+    {
+        "type_id": "16",
+        "code": "330",
+        "name": "Common Stock"
+    }
+]

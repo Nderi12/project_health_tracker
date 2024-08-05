@@ -1,0 +1,17 @@
+[
+    {
+        "name": "assets"
+    },
+    {
+        "name": "liabilities"
+    },
+    {
+        "name": "expenses"
+    },
+    {
+        "name": "income"
+    },
+    {
+        "name": "equity"
+    }
+]

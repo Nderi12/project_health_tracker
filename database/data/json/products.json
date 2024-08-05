@@ -1,0 +1,82 @@
+[
+    {
+        "name": "SERVICE (ALIGNMENT - CAMBER)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "1",
+        "type": "stock"
+    },
+    {
+        "name": "SERVICE (ALIGNMENT - NORMAL)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "1",
+        "type": "stock"
+    },
+    {
+        "name": "SERVICE (BRAKE ADJUSTMENT)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "1",
+        "type": "stock"
+    },
+    {
+        "name": "SERVICE (TYRE CHANGE)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "1",
+        "type": "stock"
+    },
+    {
+        "name": "SERVICE (AC REFILL)    ",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "1",
+        "type": "stock"
+    },
+    {
+        "name": "OIL FILTER - ALLPARTS (90915-10004)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "3",
+        "type": "stock"
+    },
+    {
+        "name": "AIR FILTER - TESON (16546-41B00)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "4",
+        "type": "stock"
+    },
+    {
+        "name": "KETER (215/60R16 - HT)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "2",
+        "type": "stock"
+    },
+    {
+        "name": "KETER (215/65R16 - HT)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "2",
+        "type": "stock"
+    },
+    {
+        "name": "KETER (LT265/75R16 MT)",
+        "quantity": "100",
+        "purchase_price": "100",
+        "sale_price": "600",
+        "category_id": "2",
+        "type": "stock"
+    }
+]

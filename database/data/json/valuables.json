@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Two post",
+    "code": "KT23YV79V",
+    "description": "wheel access",
+    "quantity": "1",
+    "purchase_cost": "600000",
+    "purchase_date": "2023-10-05"
+  }
+  ,
+  {
+    "name": "Scissor jack",
+    "code": "JT893YV79V",
+    "description": "lift heavy weights",
+    "quantity": "2",
+    "purchase_cost": "24000",
+    "purchase_date": "2023-10-05"
+  },
+  {
+    "name": "Alignment machine",
+    "code": "PHT893YV79X",
+    "description": "align vehicles",
+    "quantity": "1",
+    "purchase_cost": "36000",
+    "purchase_date": "2023-10-05"
+  },
+  {
+    "name": "Tyre changer",
+    "code": "LT893YV709V",
+    "description": "change tyres",
+    "quantity": "1",
+    "purchase_cost": "6000",
+    "purchase_date": "2023-10-05"
+  },
+  {
+    "name": "Tool box",
+    "code": "XVT893YV79V",
+    "description": "tools for operation",
+    "quantity": "1",
+    "purchase_cost": "9000",
+    "purchase_date": "2023-10-05"
+  },
+  {
+    "name": "Skimming machine",
+    "code": "JTH893YV79V",
+    "description": "resurficing",
+    "quantity": "1",
+    "purchase_cost": "19000",
+    "purchase_date": "2023-10-05"
+  },
+  {
+    "name": "Balancing machine",
+    "code": "LM893YV09V",
+    "description": "balancinng",
+    "quantity": "1",
+    "purchase_cost": "18000",
+    "purchase_date": "2023-10-09"
+  },
+  {
+    "name": "Bead boaster",
+    "code": "NN893YV79V",
+    "description": "inflation",
+    "quantity": "2",
+    "purchase_cost": "30000",
+    "purchase_date": "2023-10-10"
+  }
+  
+  ]

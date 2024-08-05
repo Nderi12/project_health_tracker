@@ -1,0 +1,141 @@
+[
+    {
+        "name": "Languages",
+        "key": "languages",
+        "description": "These are the languages supported in the system",
+        "type": "multiple",
+        "values": [
+            {
+                "name": "English"
+            },
+            {
+                "name": "Kiswahili"
+            },
+            {
+                "name": "French"
+            },
+            {
+                "name": "Arabic"
+            },
+            {
+                "name": "Chinese"
+            },
+            {
+                "name": "German"
+            },
+            {
+                "name": "Spanish"
+            }
+        ]
+    },
+    {
+        "name": "Salary Range",
+        "key": "salary_range",
+        "description": "This setting defines the salary range requirements.",
+        "type": "multiple",
+        "values": [
+            {
+                "name": "Competitive"
+            },
+            {
+                "name": "Minimum wage"
+            },
+            {
+                "name": "Ksh. 30,000"
+            },
+            {
+                "name": "Ksh. 50,000"
+            },
+            {
+                "name": "Ksh. 80,000"
+            },
+            {
+                "name": "Ksh. 100,000"
+            },
+            {
+                "name": "Ksh. 150,000"
+            },
+            {
+                "name": "Ksh. 200,000"
+            }
+        ]
+    },
+    {
+        "name": "Career level",
+        "key": "career_level",
+        "description": "This setting defines the career level requirements.",
+        "type": "multiple",
+        "values": [
+            {
+                "name":"Graduate trainee"
+            },
+            {
+                "name":"Internship"
+            },
+            {
+                "name":"Entry level"
+            },
+            {
+                "name":"Mid level"
+            },
+            {
+                "name":"Senior"
+            },
+            {
+                "name":"Management"
+            },
+            {
+                "name":"Executive"
+            }
+        ]
+    },
+    {
+        "name": "Experience length",
+        "key": "experience_level",
+        "description": "This setting defines the experience level requirements.",
+        "type": "multiple",
+        "values": [
+            {
+                "name":"No experience"
+            },
+            {
+                "name":"1-5 Years"
+            },
+            {
+                "name":"5-10 Years"
+            },
+            {
+                "name":"More than 10 Years"
+            }
+        ]
+    },
+    {
+        "name": "Academic qualifications",
+        "key": "academic_qualifications",
+        "description": "This setting defines the education level requirements.",
+        "type": "single",
+        "values": [
+            {
+                "name": "High School"
+            },
+            {
+                "name": "Certificate"
+            },
+            {
+                "name": "Diploma"
+            },
+            {
+                "name": "Bachelor Degree"
+            },
+            {
+                "name": "Masters"
+            },
+            {
+                "name": "Post Graduate"
+            },
+            {
+                "name": "PHD"
+            }
+        ]
+    }
+]

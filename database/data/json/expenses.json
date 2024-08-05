@@ -1,0 +1,66 @@
+[
+    {
+        "name": "TISSUE PAPERS",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "1",
+        "type": "office"
+    },
+    {
+        "name": "CLEANING SOAP",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "1",
+        "type": "office"
+    },
+    {
+        "name": "BALL PENS",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "1",
+        "type": "office"
+    },
+    {
+        "name": "COFFEE CUPS",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "1",
+        "type": "office"
+    },
+    {
+        "name": "NOTEBOOKS",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "1",
+        "type": "office"
+    },
+    {
+        "name": "BUCKET",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "3",
+        "type": "office"
+    },
+    {
+        "name": "MOPS",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "4",
+        "type": "office"
+    },
+    {
+        "name": "PRINTING PAPERS",
+        "quantity": "10",
+        "purchase_price": "100",
+        "sale_price": "0",
+        "category_id": "2",
+        "type": "office"
+    }
+]

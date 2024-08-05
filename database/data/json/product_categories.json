@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Keter",
+        "type": "Tyre"
+    },
+    {
+        "name": "Rhino",
+        "type": "Battery"
+    },
+    {
+        "name": "Mileking",
+        "type": "Tyre"
+    },
+    {
+        "name": "Organic",
+        "type": "accessory"
+    },
+    {
+        "name": "Standard Weights",
+        "type": "Tyre"
+    }
+]

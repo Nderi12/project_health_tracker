@@ -1,0 +1,70 @@
+[
+    {
+        "name": "current_asset",
+        "class_id": "1"
+    },
+    {
+        "name": "fixed_asset",
+        "class_id": "1"
+    },
+    {
+        "name": "inventory",
+        "class_id": "1"
+    },
+    {
+        "name": "non_current_asset",
+        "class_id": "1"
+    },
+    {
+        "name": "prepayment",
+        "class_id": "1"
+    },
+    {
+        "name": "bank_cash",
+        "class_id": "1"
+    },
+    {
+        "name": "current_liability",
+        "class_id": "2"
+    },
+    {
+        "name": "liability",
+        "class_id": "2"
+    },
+    {
+        "name": "non_current_liability",
+        "class_id": "2"
+    },
+    {
+        "name": "depreciation",
+        "class_id": "1"
+    },
+    {
+        "name": "direct_costs",
+        "class_id": "3"
+    },
+    {
+        "name": "expense",
+        "class_id": "3"
+    },
+    {
+        "name": "revenue",
+        "class_id": "4"
+    },
+    {
+        "name": "sales",
+        "class_id": "4"
+    },
+    {
+        "name": "other_income",
+        "class_id": "4"
+    },
+    {
+        "name": "equity",
+        "class_id": "5"
+    },
+    {
+        "name": "tax",
+        "class_id": "2"
+    }
+]
