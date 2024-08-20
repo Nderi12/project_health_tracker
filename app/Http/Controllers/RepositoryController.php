@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use App\Jobs\SyncGithubRepositories;
 use App\Models\Branch;
 use App\Models\Commit;
+use App\Models\Organization;
 use App\Models\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redis;
 
 class RepositoryController extends Controller
 {
@@ -24,7 +26,21 @@ class RepositoryController extends Controller
 
     public function show($id)
     {
-        $repository = Repository::with(['branches.commits'])->findOrFail($id);
+        // Try get the repository, branches and commits from redis
+        $cachedRepository = Redis::get("repository:$id");
+
+        if ($cachedRepository) {
+            // Decode the cache data
+            $repository = json_decode($cachedRepository);
+        } else {
+            // Fetch from the database if not cached
+            $repository = Repository::findOrFail($id);
+
+            // Cache the repository data
+            Redis::set("repository:$id", $repository->toJson());
+            Redis::expire("repository:$id", 3600); // Set cache expiration to 1 hour
+
+        }
 
         $healthStatus = $this->analyzeRepositoryHealth($repository);
 
@@ -58,16 +74,38 @@ class RepositoryController extends Controller
     {
         $totalCommits = 0;
         $branchCommits = [];
-        foreach ($repository->branches as $branch) {
-            $commitsCount = $branch->commits->count();
-            $branchCommits[$branch->name] = $commitsCount;
-            $totalCommits += $commitsCount;
+        $lastCommitDate = null;
+
+        // Fetch branches data from redis cache
+        $branchKeys = Redis::keys("repository:{$repository->id}:branch:*");
+
+        foreach ($branchKeys as $branchKey) {
+            dd($branchKey);
+            $cachedBranch = Redis::get($branchKey);
+
+            if ($cachedBranch) {
+                $branchData = json_decode($cachedBranch, true);
+                $branchName = $branchData['name'];
+                $commits = $branchData['commits'] ?? [];
+
+                $commitsCount = count($commits);
+                $branchCommits[$branchName] = $commitsCount;
+                $totalCommits += $commitsCount;
+
+                // Determine the latest commit date across all branches
+                foreach ($commits as $commit) {
+                    $commitDate = $commit['date'];
+                    if (!$lastCommitDate || $commitDate > $lastCommitDate) {
+                        $lastCommitDate = $commitDate;
+                    }
+                }
+            }
         }
 
         return [
             'totalCommits' => $totalCommits,
             'branchCommits' => $branchCommits,
-            'lastCommitDate' => $repository->branches->flatMap->commits->max('date'),
+            'lastCommitDate' => $lastCommitDate,
         ];
     }
 }

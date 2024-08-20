@@ -12,6 +12,5 @@ class Organization extends Model
     protected $fillable = [
         'github_id',
         'name',
-        'description'
-    ]
+    ];
 }
