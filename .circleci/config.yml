@@ -72,6 +72,9 @@ workflows:
       - test-php:
           requires:
             - build-node
-    # - deploy:
-    #     requires:
-    #       - test-php
+      - deploy:
+          requires:
+            - test-php
+          filters:
+            branches:
+              only: main
