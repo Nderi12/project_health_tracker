@@ -56,11 +56,11 @@ jobs:
     steps:
       - add_ssh_keys:
           fingerprints:
-            - "SHA256:eNIQMDpWsA1AL9S/dJ3u5kKgaWbf6cEmnl2K0NgRuw8"
+            - $SSH_FINGERPRINT
       - run:
           name: Deploy to AWS EC2 Instance
           command: |
-            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@ec2-16-170-255-232.eu-north-1.compute.amazonaws.com "
+            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USERNAME@$EC2_IP "
               cd /var/www/vhosts/project_health_tracker/
               git pull origin main
               composer install --no-interaction --prefer-dist --optimize-autoloader
