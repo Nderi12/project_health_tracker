@@ -30,6 +30,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: Install composer dependencies
+          command: composer install --no-interaction --prefer-dist --no-scripts --no-progress --no-suggest
+      - run:
           name: Set up Laravel environment
           command: |
             cp .env.example .env
@@ -37,9 +40,6 @@ jobs:
       - restore_cache:
           keys:
             - composer-v1-{{ checksum "composer.lock" }}
-      - run:
-          name: Install composer dependencies
-          command: composer install --no-interaction --prefer-dist --no-scripts --no-progress --no-suggest
       - save_cache:
           paths:
             - vendor
