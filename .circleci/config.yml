@@ -25,7 +25,6 @@ jobs:
           destination: node-build
 
   test-php:
-    # Install PHP packages and run tests
     docker:
       - image: cimg/php:8.2-node
     steps:
@@ -35,12 +34,20 @@ jobs:
           command: |
             cp .env.example .env
             php artisan key:generate
+      - restore_cache:
+          keys:
+            - composer-v1-{{ checksum "composer.lock" }}
       - run:
           name: Install composer dependencies
-          command: composer install --no-interaction --prefer-dist
+          command: composer install --no-interaction --prefer-dist --no-scripts --no-progress --no-suggest
+      - save_cache:
+          paths:
+            - vendor
+          key: composer-v1-{{ checksum "composer.lock" }}
       - run:
           name: Run PHP tests
           command: ./vendor/bin/phpunit
+
 
   deploy:
     # Deploy job to aws ec2 instance
