@@ -12,7 +12,8 @@ class Repository extends Model
     protected $fillable = [
         'name',
         'url',
-        'description'
+        'description',
+        'organization_id'
     ];
 
     public function branches()

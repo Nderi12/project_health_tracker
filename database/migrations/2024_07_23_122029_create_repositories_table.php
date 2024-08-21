@@ -15,6 +15,7 @@ return new class () extends Migration {
             $table->string('name');
             $table->string('url');
             $table->text('description')->nullable();
+            $table->unsignedBigInteger('organization_id')->nullable();
             $table->timestamps();
         });
     }

@@ -12,6 +12,7 @@ use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Redis;
 
 class SyncGithubRepositories implements ShouldQueue
 {
@@ -40,7 +41,7 @@ class SyncGithubRepositories implements ShouldQueue
                 // Store the organization in the database
                 $organization = Organization::updateOrCreate(
                     ['github_id' => $org['id']],
-                    ['name' => $org['login'], 'description' => $org['description']]
+                    ['name' => $org['login']]
                 );
 
                 // Sync the repositories for each organization
@@ -79,7 +80,7 @@ class SyncGithubRepositories implements ShouldQueue
     }
 
     /**
-     * Sync branches and commits for a given repository.
+     * Cache branches and commits for a given repository in redis.
      *
      * @param array $repo
      * @param Repository $repository
@@ -87,35 +88,35 @@ class SyncGithubRepositories implements ShouldQueue
      */
     private function syncBranchesAndCommits(array $repo, Repository $repository, string $token)
     {
-        $branchesResponse = Http::withToken($token)
-            ->get(str_replace('{/branch}', '', $repo['branches_url']));
+        $branchesResponse = Http::withToken($token)->get(str_replace('{/branch}', '', $repo['branches_url']));
 
         if ($branchesResponse->successful()) {
             $branches = $branchesResponse->json();
+            $redisBranchKey = "repository:{$repository->id}:branches";
 
             foreach ($branches as $branch) {
-                $branchModel = Branch::updateOrCreate(
-                    ['repository_id' => $repository->id, 'name' => $branch['name']],
-                    []
-                );
+                // Store essential branch data in Redis
+                Redis::hset($redisBranchKey, $branch['name'], json_encode([
+                    'branch_name' => $branch['name']
+                ]));
 
-                $commitsResponse = Http::withToken($token)
-                    ->get($repo['url'] . '/commits', ['sha' => $branch['name']]);
+                $commitsResponse = Http::withToken($token)->get($repo['url'] . '/commits', ['sha' => $branch['name']]);
 
                 if ($commitsResponse->successful()) {
                     $commits = $commitsResponse->json();
+                    $redisCommitKey = "repository:{$repository->id}:branch:{$branch['name']}:commits";
 
                     foreach ($commits as $commit) {
-                        Commit::updateOrCreate(
-                            ['branch_id' => $branchModel->id, 'sha' => $commit['sha']],
-                            [
-                                'message' => $commit['commit']['message'],
-                                'date' => $commit['commit']['committer']['date']
-                            ]
-                        );
+                        // Store commit data in redis
+                        Redis::rpush($redisCommitKey, json_encode([
+                            'sha' => $commit['sha'],
+                            'message' => $commit['commit']['message'],
+                            'date' => $commit['commit']['committer']['date']
+                        ]));
                     }
                 }
             }
         }
     }
+    
 }
