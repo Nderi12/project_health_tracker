@@ -42,13 +42,28 @@ jobs:
           command: ./vendor/bin/phpunit
 
   deploy:
-    # Example deploy job (adjust as needed)
+    # Deploy job to aws ec2 instance
     docker:
       - image: cimg/base:stable
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - SHA256:eNIQMDpWsA1AL9S/dJ3u5kKgaWbf6cEmnl2K0NgRuw8
       - run:
-          name: deploy
-          command: '# e.g., ./deploy.sh'
+          name: Deploy to AWS EC2 Instance
+          command: |
+            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa ubuntu@ec2-16-170-255-232.eu-north-1.compute.amazonaws.com << 'EOF'
+              cd /var/www/vhosts/project_health_tracker/
+              git pull origin main
+              composer install --no-interaction --prefer-dist --optimize-autoloader
+              npm install
+              npm run build
+              php artisan migrate --force
+              php artisan cache:clear
+              php artisan config:cache
+              sudo systemctl restart php-fpm
+              sudo systemctl restart nginx
+            EOF
 
 workflows:
   build-and-test:
