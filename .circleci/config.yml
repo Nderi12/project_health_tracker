@@ -35,8 +35,9 @@ jobs:
           command: |
             cp .env.example .env
             php artisan key:generate
-      - php/install-packages:
-          composer-command: install --no-interaction --prefer-dist
+      - run:
+          name: Install composer dependencies
+          command: composer install --no-interaction --prefer-dist
       - run:
           name: Run PHP tests
           command: ./vendor/bin/phpunit
