@@ -69,8 +69,8 @@ jobs:
               php artisan migrate --force
               php artisan cache:clear
               php artisan config:cache
-              sudo systemctl stop php-fpm
-              sudo systemctl stop nginx
+              sudo systemctl restart php-fpm
+              sudo systemctl restart nginx
             "
 
 workflows:
