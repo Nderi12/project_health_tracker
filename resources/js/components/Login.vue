@@ -6,7 +6,7 @@
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
                 <!--begin::Logo-->
                 <a href="#0" class="mb-12">
-                    <!-- <img alt="Logo" src="./git-flow.png" class="" style="height: 150px; width: 150px;" /> -->
+                    <img alt="Logo" src="./git-flow.png" class="" style="height: 150px; width: 150px;" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Wrapper-->
