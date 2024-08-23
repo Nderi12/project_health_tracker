@@ -1,0 +1,88 @@
+version: 2.1
+orbs:
+  node: circleci/node@5
+  php: circleci/php@1
+
+jobs:
+  build-node:
+    # Build the Node.js project
+    executor: node/default
+    steps:
+      - checkout
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          command: npm run build
+      - run:
+          name: Create the ~/artifacts directory if it doesn't exist
+          command: mkdir -p ~/artifacts
+      # Copy output to artifacts directory
+      - run:
+          name: Copy artifacts
+          command: cp -R build dist public .output .next .docusaurus ~/artifacts 2>/dev/null || true
+      - store_artifacts:
+          path: ~/artifacts
+          destination: node-build
+
+  test-php:
+    docker:
+      - image: cimg/php:8.2-node
+    steps:
+      - checkout
+      - run:
+          name: Install composer dependencies
+          command: composer install --no-interaction --prefer-dist --no-scripts --no-progress --no-suggest
+      - run:
+          name: Set up Laravel environment
+          command: |
+            cp .env.example .env
+            php artisan key:generate
+      - restore_cache:
+          keys:
+            - composer-v1-{{ checksum "composer.lock" }}
+      - save_cache:
+          paths:
+            - vendor
+          key: composer-v1-{{ checksum "composer.lock" }}
+      - run:
+          name: Run PHP tests
+          command: ./vendor/bin/phpunit
+
+
+  deploy:
+    # Deploy job to aws ec2 instance
+    docker:
+      - image: cimg/base:stable
+    steps:
+      # - add_ssh_keys:
+      #     fingerprints:
+      #       - $SSH_FINGERPRINT
+      - run:
+          name: Deploy to AWS EC2 Instance
+          command: |
+            ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa $EC2_USERNAME@$EC2_IP "
+              cd /var/www/vhosts/project_health_tracker/
+              git pull origin main
+              composer install --no-interaction --prefer-dist --optimize-autoloader
+              npm install
+              npm run build
+              php artisan migrate --force
+              php artisan cache:clear
+              php artisan config:cache
+              sudo systemctl restart php-fpm
+              sudo systemctl restart nginx
+            "
+
+workflows:
+  build-and-test:
+    jobs:
+      - build-node
+      - test-php:
+          requires:
+            - build-node
+      - deploy:
+          requires:
+            - test-php
+          filters:
+            branches:
+              only: main

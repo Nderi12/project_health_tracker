@@ -4,10 +4,10 @@
 		<!--begin::Logo-->
 		<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 			<!--begin::Logo image-->
-			<!-- <a href="#0">
-				<img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-default" />
-				<img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-minimize" />
-			</a> -->
+			<a href="#0">
+				<!-- <img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-default" />
+				<img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-minimize" /> -->
+			</a>
 			<!--end::Logo image-->
 			<!--begin::Sidebar toggle-->
 			<div id="kt_app_sidebar_toggle" class="app-sidebar-toggle btn btn-icon btn-shadow btn-sm btn-color-muted btn-active-color-primary body-bg h-30px w-30px position-absolute top-50 start-100 translate-middle rotate" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="app-sidebar-minimize">
