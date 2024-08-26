@@ -26,7 +26,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::post('/login', [App\Http\Controllers\AccessController::class, 'authenticate']);
 
 
-Route::group(['middleware' => ['auth:sanctum']], function() {
+// Route::group(['middleware' => ['auth:sanctum']], function() {
     Route::post('/top-cards', [DashboardController::class, 'index']);
 
     Route::post('/settings', [SettingController::class, 'index']);
@@ -43,7 +43,7 @@ Route::group(['middleware' => ['auth:sanctum']], function() {
     
     Route::resource('repositories', RepositoryController::class)->only(['index', 'show']);
     Route::post('/repositories/sync', [RepositoryController::class, 'sync']);
-});
+// });
 
 
 Route::get('/{any}', function () { return view('app'); })->where('any', '.*');

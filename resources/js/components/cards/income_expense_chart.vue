@@ -8,7 +8,7 @@
         <!--begin::Info-->
         <div class="d-flex align-items-center">
           <!--begin::Title-->
-          <span class="pt-1 fw-semibold fs-6">Income Vs. Expense Chart</span>
+          <span class="pt-1 fw-semibold fs-6">Health Chart</span>
           <!--end::Title-->
         </div>
         <!--end::Info-->

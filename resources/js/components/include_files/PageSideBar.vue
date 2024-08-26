@@ -5,8 +5,8 @@
 		<div class="app-sidebar-logo px-6" id="kt_app_sidebar_logo">
 			<!--begin::Logo image-->
 			<a href="#0">
-				<img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-default" />
-				<img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-minimize" />
+				<!-- <img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-default" />
+				<img alt="Logo" src="./git-flow.png" class="h-50px app-sidebar-logo-minimize" /> -->
 			</a>
 			<!--end::Logo image-->
 			<!--begin::Sidebar toggle-->

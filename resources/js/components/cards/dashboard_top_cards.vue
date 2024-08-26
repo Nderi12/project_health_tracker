@@ -6,16 +6,17 @@
           <div class="row no-gutters align-items-center">
             <div class="col mb-3">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-              INCOME
+              Repositories
             </div>
             <div class="col-auto">
-              <div class="fas fa-arrow-up fa-2x text-secondary-300" style="color: green;"></div>
+              <div class="fas fa-code fa-2x text-secondary-300" style="color: green;"></div>
             </div>
           </div>
           <div class="row">
             <div class="col-auto mt-5">
-              <div class="h6 mb-0 font-weight-bold text-primary" v-if="!hasData">KSH. <span class="spinner-border spinner-border-sm align-middle text-black mr-2"></span></div>
-              <div class="h6 mb-0 font-weight-bold text-primary" v-else>{{ formatCurrency(income) }}</div>
+              <!-- <div class="h6 mb-0 font-weight-bold text-primary" v-if="!hasData">KSH. <span class="spinner-border spinner-border-sm align-middle text-black mr-2"></span></div>
+              <div class="h6 mb-0 font-weight-bold text-primary" v-else>{{ formatCurrency(income) }}</div> -->
+              <div class="h6 mb-0 font-weight-bold text-primary">0</div>
             </div>
           </div>
         </div>
@@ -27,16 +28,17 @@
           <div class="row no-gutters align-items-center">
             <div class="col mb-3">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-              PURCHASES
+              Deployments
             </div>
             <div class="col-auto">
-              <div class="fas fa-credit-card fa-2x text-primary-300"></div>
+              <div class="fas fa-server fa-2x text-primary-300"></div>
             </div>
           </div>
           <div class="row">
             <div class="col-auto mt-5">
-              <div class="h6 mb-0 font-weight-bold text-primary" v-if="!hasData">KSH. <span class="spinner-border spinner-border-sm align-middle text-black mr-2"></span></div>
-              <div class="h6 mb-0 font-weight-bold text-primary" v-else>{{ formatCurrency(purchases) }}</div>
+              <!-- <div class="h6 mb-0 font-weight-bold text-primary" v-if="!hasData">KSH. <span class="spinner-border spinner-border-sm align-middle text-black mr-2"></span></div>
+              <div class="h6 mb-0 font-weight-bold text-primary" v-else>{{ formatCurrency(purchases) }}</div> -->
+              <div class="h6 mb-0 font-weight-bold text-primary">0</div>
             </div>
           </div>
         </div>
@@ -48,16 +50,17 @@
           <div class="row no-gutters align-items-center">
             <div class="col mb-3">
               <div class="text-xs font-weight-bold text-primary text-uppercase mb-1"></div>
-              COST OF SALE
+              Archived
             </div>
             <div class="col-auto">
-              <div class="fas fa-arrow-down fa-2x text-warning-300" style="color: red;"></div>
+              <div class="fas fa-archive fa-2x text-warning-300" style="color: red;"></div>
             </div>
           </div>
           <div class="row">
             <div class="col-auto mt-5">
-              <div class="h6 mb-0 font-weight-bold text-primary" v-if="!hasData">KSH. <span class="spinner-border spinner-border-sm align-middle text-black mr-2"></span></div>
-              <div class="h6 mb-0 font-weight-bold text-primary" v-else>{{ formatCurrency(costOfSale) }}</div>
+              <!-- <div class="h6 mb-0 font-weight-bold text-primary" v-if="!hasData">KSH. <span class="spinner-border spinner-border-sm align-middle text-black mr-2"></span></div>
+              <div class="h6 mb-0 font-weight-bold text-primary" v-else>{{ formatCurrency(costOfSale) }}</div> -->
+              <div class="h6 mb-0 font-weight-bold text-primary">0</div>
             </div>
           </div>
         </div>

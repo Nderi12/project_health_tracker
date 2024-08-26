@@ -27,7 +27,7 @@
 									<component :is="topCards"></component>
 								</div>
 								<div class="row mb-5 g-5 g-xl-10">
-									<h3 class="mb-5 mt-20">Income Expense Chart</h3>
+									<h3 class="mb-5 mt-20">Health Statistics</h3>
 									<component :is="IncomeExpenseChart"></component>
 								</div>
 							</div>

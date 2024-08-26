@@ -15,6 +15,7 @@
         "maatwebsite/excel": "^3.1",
         "milon/barcode": "^10.0",
         "picqer/php-barcode-generator": "^2.4",
+        "predis/predis": "^2.2",
         "safaricom/mpesa": "^1.0",
         "spatie/laravel-fractal": "^6.0"
     },
